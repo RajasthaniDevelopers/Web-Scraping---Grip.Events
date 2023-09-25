@@ -16,10 +16,10 @@ async function fetchThings(pageCount) {
   const allThings = [];
 
   for (let page = 1; page <= pageCount; page++) {
-    const pageURL = `${baseURL}/search?page=${page}`;
-    // const pageURL = `${baseURL}/search?search=&filters=active:1&sort=name&order=asc&type_id=6134,6237,7688,7687,6132,6133,6239&page=${page}`;
+    // const pageURL = `${baseURL}/search?page=${page}`;
+    const pageURL = `${baseURL}/search?search=&filters=active:1&sort=name&order=asc&type_id=6134,6237,7688,7687,6132,6133,6239&page=${page}`;
 
-    await waitFor_seconds(3);
+    await waitFor_seconds(1);
 
     try {
       const response = await axios.get(pageURL, {
@@ -150,8 +150,18 @@ async function fetchThingDetails(thingID) {
 async function main() {
   const pageCount = 488; // Replace with the total number of pages
   // const pageCount = 1;
-  const allThingIDs = await fetchThings(pageCount);
-  console.log("allThingIDs", allThingIDs);
+
+  let allThingIDs = [];
+
+  // check if IDs are already present
+  if (fs.existsSync("IDs.json")) {
+    allThingIDs = JSON.parse(fs.readFileSync("IDs.json"), "utf8");
+  } else {
+    allThingIDs = await fetchThings(pageCount);
+
+    fs.writeFileSync("IDs.json", JSON.stringify(allThingIDs, null, 2));
+    console.log("All IDs saved to", "IDs.json");
+  }
 
   const allThingDetails = [];
 
