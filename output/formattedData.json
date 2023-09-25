@@ -190,25 +190,6 @@
     "school_name": "College of San Mateo"
   },
   {
-    "name": "(Hazem) Abdelrahman Alsaeed",
-    "first_name": "(Hazem) Abdelrahman",
-    "last_name": "Alsaeed",
-    "headline": "Chief Product Officer -  io.net",
-    "summary": null,
-    "job_title": "Chief Product Officer",
-    "company_name": "io.net",
-    "location": "Riyadh, California, Saudi Arabia",
-    "location_code": "en-gb",
-    "picture_url": null,
-    "job_level": "C-Level",
-    "country": "Saudi Arabia",
-    "industry": "Artificial Intelligence/Machine Learning",
-    "job_function": "Administration",
-    "top_topic": "Artificial Intelligence & Machine Learning",
-    "state_list": "California",
-    "company_stage": "Startup"
-  },
-  {
     "name": "*Michael DeLucca",
     "first_name": "*Michael",
     "last_name": "DeLucca",
@@ -418,53 +399,6 @@
     "your_companys_regional_headquarters": "APAC"
   },
   {
-    "name": "10times",
-    "first_name": "10times",
-    "last_name": null,
-    "headline": null,
-    "summary": "10times is a world's leading event discovery and networking platform, bridging over 55 million business professionals across the world. It provides event organizers with a broad-reaching platform for audience engagement. Its suite of features including integrated promotional tools, real-time analytics, and networking capabilities streamline event marketing and management. With a dedicated 24/7 customer service, it enhances event visibility, efficiency, and profitability. Experience unparalleled event marketing and explore the benefits of global networking with 10times.com.",
-    "job_title": null,
-    "company_name": "10times",
-    "location": null,
-    "location_code": "en-gb",
-    "picture_url": "https://events-cdn.grip.events/things-images/0c697a62c7204a48eecc12a7768f2747_1691446143.png",
-    "website": "https://10times.com"
-  },
-  {
-    "name": "1strike",
-    "first_name": "1strike",
-    "last_name": null,
-    "headline": null,
-    "summary": "Cybersecurity SaaS platform to enhance cyber attakcs detection performance through automatic and continuous MITRE attack techniques execution.",
-    "job_title": null,
-    "company_name": "1strike",
-    "location": null,
-    "location_code": "en-gb",
-    "picture_url": null,
-    "website": "https://www.1strike.io/",
-    "company_category": [
-      "Polish Pavilion",
-      "Security"
-    ]
-  },
-  {
-    "name": "3D Continuum",
-    "first_name": "3D Continuum",
-    "last_name": null,
-    "headline": "Decision Intelligence platform built for industrial workflows",
-    "summary": "Decision Intelligence platform built for industrial workflows",
-    "job_title": null,
-    "company_name": "3D Continuum",
-    "location": "San Francisco",
-    "location_code": "en-gb",
-    "picture_url": "https://events-cdn.grip.events/things-images/0e4e1910f9c8674f51c91386b577e6aa_1692987808.jpeg",
-    "website": "https://3dcontinuum.com",
-    "company_stage": "Startup",
-    "company_category": [
-      "SaaS"
-    ]
-  },
-  {
     "name": "@Vinay Bharadwaj",
     "first_name": "@Vinay",
     "last_name": "Bharadwaj",
@@ -526,5 +460,134 @@
     "startup_annual_recurring_revenue": "$500,000 - $999,999",
     "funding_raised_to_date_for_your_company": "$100,000 - $249,999",
     "your_companys_regional_headquarters": "APAC"
+  },
+  {
+    "name": "_Alex Mohbat",
+    "first_name": "_Alex",
+    "last_name": "Mohbat",
+    "headline": "Investor -  No name",
+    "summary": "Launching an AI incubator under GAC, working hand in hand with CEO.",
+    "job_title": "Investor",
+    "company_name": "No name - previously @ Lunchclub",
+    "location": "San Francisco, California, United States of America",
+    "location_code": "en-gb",
+    "picture_url": "https://events-cdn.grip.events/things-images/c7bb430af9d8b4b2dfd5470d4763654d_1695240835.jpeg",
+    "company_stage": "Small/Medium Sized Business",
+    "i_want_to_connect_with_these_types_of_organizations": [
+      "Startup"
+    ],
+    "industry": "Artificial Intelligence/Machine Learning",
+    "job_function": "Investor",
+    "country": "United States of America",
+    "company_size": "1-10",
+    "job_level": "Manager/Director",
+    "top_topic": "Artificial Intelligence & Machine Learning",
+    "city": "San Francisco",
+    "i_want_to_connect_with": [
+      "Founders",
+      "Start-ups"
+    ],
+    "state_list": "California",
+    "website": "www",
+    "fund_size": "$5M-$10M",
+    "primary_investment_region": "All (Region Agnostic)",
+    "primary_investment_industry": "Artificial Intelligence/Machine Learning"
+  },
+  {
+    "name": "_Anand Thangaraju",
+    "first_name": "_Anand",
+    "last_name": "Thangaraju",
+    "email": "MONSIEUR.ANAND@GMAIL.COM",
+    "phone_number": "2012341707",
+    "headline": "Venture Scout -  Hustle Fund",
+    "summary": "Hustle Fund, an early-stage venture capital fund in Silicon Valley, created the AngelSquad program to give radically transparent access to show how we invest and invite you to invest $1k or more into our top performing startups.",
+    "job_title": "Venture Scout",
+    "company_name": "Hustle Fund",
+    "location": "MOUNTAIN VIEW, California, United States of America",
+    "location_code": "en-gb",
+    "picture_url": "https://events-cdn.grip.events/things-images/a9662f02fc3f48f41bf14cc13b1afc33_1695006470.jpeg",
+    "company_stage": "Small/Medium Sized Business",
+    "i_want_to_connect_with_these_types_of_organizations": [
+      "Large Enterprise",
+      "Startup"
+    ],
+    "industry": "Venture Capital/Private Equity",
+    "job_function": "Investor",
+    "country": "United States of America",
+    "company_size": "1-10",
+    "job_level": "Manager/Director",
+    "city": "mountain view",
+    "i_want_to_connect_with": [
+      "Founders",
+      "Attendees",
+      "Investors"
+    ],
+    "state_list": "California",
+    "website": "www.goldilocksadvisory.com",
+    "fund_size": "$5M-$10M",
+    "primary_investment_region": "All (Region Agnostic)",
+    "primary_investment_industry": "All (Industry Agnostic)"
+  },
+  {
+    "name": "_Anuar Bajos",
+    "first_name": "_Anuar",
+    "last_name": "Bajos",
+    "email": "anuar@developers.net",
+    "phone_number": "+17372104617",
+    "headline": "Director of Marketing  -  Developers.Net",
+    "summary": "We are a U.S.-based staffing agency that specializes in connecting U.S. and Canadian companies with remote, highly-skilled Latin American professionals who are fluent in English and have the required tech stack while working in the American time zones. ",
+    "job_title": "Sales & Marketing Director",
+    "company_name": "Developers.Net",
+    "location": "Austin, Texas, United States of America",
+    "location_code": "en-gb",
+    "picture_url": "https://events-cdn.grip.events/things-images/c5fcba05ceb8dea3ff808f361515e807_1695155407.jpeg",
+    "job_level": "Manager/Director",
+    "job_function": "Marketing/PR",
+    "country": "United States of America",
+    "industry": "Other",
+    "state_list": "Texas",
+    "top_topic": "Artificial Intelligence & Machine Learning",
+    "company_stage": "Medium Sized Enterprise",
+    "i_want_to_connect_with_these_types_of_organizations": [
+      "Large Enterprise",
+      "Medium Sized Enterprise",
+      "Small/Medium Sized Business"
+    ]
+  },
+  {
+    "name": "_Emilio Baez",
+    "first_name": "_Emilio",
+    "last_name": "Baez",
+    "headline": "President & Founder -  Developers.Net",
+    "summary": "Developers.Net is a U.S.-based staffing agency that helps alleviate the problem of searching, finding, and managing proficient talent that truly fits our partner's needs in Latin America.",
+    "job_title": "President & Founder",
+    "company_name": "Developers.Net",
+    "location": "Naples, Florida, United States of America",
+    "location_code": "en-gb",
+    "picture_url": "https://events-cdn.grip.events/things-images/6261e9eab66e713479b7163b3bc2ccb5_1695157681.jpeg",
+    "company_stage": "Startup",
+    "i_want_to_connect_with_these_types_of_organizations": [
+      "Small/Medium Sized Business",
+      "Large Enterprise",
+      "Medium Sized Enterprise",
+      "Startup"
+    ],
+    "industry": "Other",
+    "job_function": "Founder/CEO",
+    "country": "United States of America",
+    "company_size": "51-250",
+    "job_level": "C-Level",
+    "funding_stage": "Bootstrapped/Friends + Family",
+    "city": "Austin",
+    "i_want_to_connect_with": [
+      "Founders",
+      "Start-ups"
+    ],
+    "state_list": "Florida",
+    "website": "http://developers.net",
+    "how_many_years_has_your_company_been_active": "4 - 6 Years",
+    "startup_annual_recurring_revenue": "$4,000,000 - $6,999,999",
+    "funding_raised_to_date_for_your_company": "$1,000,000 - $3,999,999",
+    "your_companys_regional_headquarters": "NAMER"
   }
 ]

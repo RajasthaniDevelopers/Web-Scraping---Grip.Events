@@ -4,8 +4,8 @@ import axios from "axios";
 
 const baseURL = "https://api-prod.grip.events/1/container/5956";
 const apiToken = "3d58cec7-a0d5-4bec-b1ff-19b6574b7f4c"; // put the fresh api token here.
-const jsonDataLocation = "thing-data.json";
-const formattedJSONdataLocation = "formattedData.json";
+const jsonDataLocation = "./output/thing-data.json";
+const formattedJSONdataLocation = "./output/formattedData.json";
 
 main();
 const startTime = Date.now();
@@ -16,8 +16,8 @@ async function fetchThings(pageCount) {
   const allThings = [];
 
   for (let page = 1; page <= pageCount; page++) {
-    const pageURL = `${baseURL}/search?page=${page}`;
-    // const pageURL = `${baseURL}/search?search=&filters=active:1&sort=name&order=asc&type_id=6134,6237,7688,7687,6132,6133,6239&page=${page}`;
+    // const pageURL = `${baseURL}/search?page=${page}`;
+    const pageURL = `${baseURL}/search?search=&filters=active:1&sort=name&order=asc&type_id=6134,6237,7688,7687,6132,6133,6239&page=${page}`;
 
     await waitFor_seconds(5);
 
@@ -277,7 +277,7 @@ function furtherProcess() {
       xlsx.utils.book_append_sheet(wb, ws, "Sheet 1");
 
       // Write to Excel file
-      xlsx.writeFile(wb, "output.xlsx");
+      xlsx.writeFile(wb, "./output/output.xlsx");
       const endTime = Date.now();
       console.log(new Date().toLocaleTimeString());
       console.log("took", msToHMS(-startTime + endTime));
