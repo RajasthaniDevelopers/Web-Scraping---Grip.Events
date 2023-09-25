@@ -16,10 +16,10 @@ async function fetchThings(pageCount) {
   const allThings = [];
 
   for (let page = 1; page <= pageCount; page++) {
-    // const pageURL = `${baseURL}/search?page=${page}`;
-    const pageURL = `${baseURL}/search?search=&filters=active:1&sort=name&order=asc&type_id=6134,6237,7688,7687,6132,6133,6239&page=${page}`;
+    const pageURL = `${baseURL}/search?page=${page}`;
+    // const pageURL = `${baseURL}/search?search=&filters=active:1&sort=name&order=asc&type_id=6134,6237,7688,7687,6132,6133,6239&page=${page}`;
 
-    await waitFor_seconds(5);
+    await waitFor_seconds(3);
 
     try {
       const response = await axios.get(pageURL, {
@@ -133,7 +133,9 @@ async function fetchThingDetails(thingID) {
             response.phone_number = phone_number;
           })
           .catch((error) => {
-            console.log(error);
+            console.error(
+              `Failed to fetch contact details for ${response.name}: ${error.message}`
+            );
           });
 
         resolve(response);
@@ -146,8 +148,8 @@ async function fetchThingDetails(thingID) {
 }
 
 async function main() {
-  // const pageCount = 488; // Replace with the total number of pages
-  const pageCount = 1;
+  const pageCount = 488; // Replace with the total number of pages
+  // const pageCount = 1;
   const allThingIDs = await fetchThings(pageCount);
   console.log("allThingIDs", allThingIDs);
 
