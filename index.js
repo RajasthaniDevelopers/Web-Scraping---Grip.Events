@@ -49,9 +49,6 @@ async function fetchThings(pageCount) {
       });
 
       const thingsOnPage = response.data.data.map((x) => x.id).filter((x) => x); // Assuming the results are in an array
-      // console.log(thingsOnPage);
-      // console.log(thingsOnPage);
-      // await setTimeout(() => {}, 100000);
 
       // Extract and store the IDs of things on this page
       const thingIDsOnPage = thingsOnPage.map((thing) => thing);
