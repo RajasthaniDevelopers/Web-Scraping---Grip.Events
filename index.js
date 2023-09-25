@@ -163,7 +163,7 @@ async function main() {
         console.log("pushed ", thingDetails.name, "in allThingDetails");
       }
     } catch (err) {
-      console.log("err", err);
+      console.log("error pushing thingDetails:", i, allThingIDs[i], err);
     } finally {
       if (i == allThingIDs.length - 1) {
         console.log("allThingsDetails", allThingDetails.length);
