@@ -8,14 +8,18 @@ const jsonDataLocation = "thing-data.json";
 const formattedJSONdataLocation = "formattedData.json";
 
 main();
-const startTime = new Date();
-console.log("start time", startTime);
+const startTime = Date.now();
+
+console.log("start time", new Date().toLocaleTimeString());
 
 async function fetchThings(pageCount) {
   const allThings = [];
 
   for (let page = 1; page <= pageCount; page++) {
     const pageURL = `${baseURL}/search?page=${page}`;
+    // const pageURL = `${baseURL}/search?search=&filters=active:1&sort=name&order=asc&type_id=6134,6237,7688,7687,6132,6133,6239&page=${page}`;
+
+    await waitFor_seconds(5);
 
     try {
       const response = await axios.get(pageURL, {
@@ -64,7 +68,7 @@ async function fetchThings(pageCount) {
 }
 
 async function fetchThingDetails(thingID) {
-  await waitFor_seconds(3);
+  await waitFor_seconds(1);
   const thingURL = `${baseURL}/thing/${thingID}`;
   return new Promise((resolve, reject) => {
     axios
@@ -94,7 +98,48 @@ async function fetchThingDetails(thingID) {
         },
       })
       .then((res) => {
-        resolve(res.data.data);
+        const response = res.data.data;
+        // also add contact details of the person
+
+        axios
+          .request({
+            method: "get",
+            maxBodyLength: Infinity,
+            url: `https://api-prod.grip.events/1/container/5956/thing/${thingID}/contact_details`,
+            headers: {
+              authority: "api-prod.grip.events",
+              accept: "application/json",
+              "accept-language": "en-gb",
+              "cache-control": "No-Cache",
+              "content-type": "application/json",
+              "login-source": "web",
+              origin: "https://matchmaking.grip.events",
+              pragma: "No-Cache",
+              referer:
+                "https://matchmaking.grip.events/techcrunchdisrupt2023/app/profile/9035640",
+              "sec-ch-ua":
+                '"Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"',
+              "sec-ch-ua-mobile": "?0",
+              "sec-ch-ua-platform": '"Linux"',
+              "sec-fetch-dest": "empty",
+              "sec-fetch-mode": "cors",
+              "sec-fetch-site": "same-site",
+              "user-agent":
+                "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36",
+              "x-authorization": apiToken,
+              "x-grip-version": "Web/22.0.6",
+            },
+          })
+          .then((r) => {
+            const { email, phone_number } = r.data.data;
+            response.email = email;
+            response.phone_number = phone_number;
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+
+        resolve(response);
       })
       .catch((err) => {
         reject(`Failed to fetch thing ${thingID}: ${err.message}`);
@@ -104,8 +149,8 @@ async function fetchThingDetails(thingID) {
 }
 
 async function main() {
-  const pageCount = 488; // Replace with the total number of pages
-  // const pageCount = 1;
+  // const pageCount = 488; // Replace with the total number of pages
+  const pageCount = 1;
   const allThingIDs = await fetchThings(pageCount);
   console.log("allThingIDs", allThingIDs);
 
@@ -143,6 +188,8 @@ function formatJSONdata(data) {
       name,
       first_name,
       last_name,
+      email,
+      phone_number,
       headline,
       summary,
       job_title,
@@ -157,6 +204,8 @@ function formatJSONdata(data) {
       name,
       first_name,
       last_name,
+      email,
+      phone_number,
       headline,
       summary,
       job_title,
@@ -229,21 +278,33 @@ function furtherProcess() {
 
       // Write to Excel file
       xlsx.writeFile(wb, "output.xlsx");
-      const endTime = new Date();
-      console.log(endTime);
-      console.log(
-        "took",
-        (Date.parse(startTime) - Date.parse(endTime)) / 1000,
-        "seconds"
-      );
+      const endTime = Date.now();
+      console.log(new Date().toLocaleTimeString());
+      console.log("took", msToHMS(-startTime + endTime));
     })();
   }
 }
 
-async function waitFor_seconds() {
+async function waitFor_seconds(seconds) {
   return new Promise((res) => {
     setTimeout(() => {
       res();
     }, seconds * 1000);
   });
+}
+
+function msToHMS(milliseconds) {
+  if (milliseconds < 0) {
+    return "Invalid input"; // Handle negative input if necessary
+  }
+
+  // Calculate hours, minutes, and seconds
+  const hours = Math.floor(milliseconds / 3600000); // 1 hour = 3600000 milliseconds
+  const minutes = Math.floor((milliseconds % 3600000) / 60000); // 1 minute = 60000 milliseconds
+  const seconds = Math.floor((milliseconds % 60000) / 1000); // 1 second = 1000 milliseconds
+
+  // Format the result
+  const hms = `${hours} hours, ${minutes} minutes and ${seconds} seconds`;
+
+  return hms;
 }
